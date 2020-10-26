@@ -37,6 +37,7 @@ public class SingleLinkedList {
     public void reverse() {
         // homework
         // in-place
+
     }
 
     // do not change any function below
@@ -103,6 +104,7 @@ public class SingleLinkedList {
     }
 
     public int getSize() {
+
         return size;
     }
 }

@@ -6,8 +6,6 @@ public class ArrayStack<T> implements Stack<T> {
     private int size;
 
     private ArrayStack() {
-        this.size = size;
-        data = (T[])(new Object[size]);
     }
 
     public ArrayStack(int capacity) {

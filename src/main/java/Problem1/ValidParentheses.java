@@ -7,5 +7,7 @@ public class ValidParentheses {
         // homework
         // !!! must use ArrayStack or LinkedListStack from problem 1
         return false; // place holder
+
+        if()
     }
 }

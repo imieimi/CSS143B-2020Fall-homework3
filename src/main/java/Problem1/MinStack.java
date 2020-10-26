@@ -6,11 +6,12 @@ public class MinStack extends ArrayStack<Integer> {
     // do not use Java Stack
     private int[] data;
     private int size;
+    private int min;
 
 
     public MinStack(int size) {
         // homework
-        //super(size); // place holder
+        super(size); // place holder
         data = new int[size];
         this.size = size;
     }
@@ -19,11 +20,11 @@ public class MinStack extends ArrayStack<Integer> {
     public boolean push(Integer val) {
         // homework
         //return false; // place holder
-        if(size != data.length){
+        if(size > data.length){
+            return false;
+        }else{
             data[size] = val;
             return true;
-        }else{
-            return false;
         }
     }
 
@@ -38,7 +39,7 @@ public class MinStack extends ArrayStack<Integer> {
         // homework
         // loop of any kind is not allowed
         //return -1; // place holder
-        return data[size];
+        return min;
     }
 }
 
