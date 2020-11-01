@@ -39,11 +39,12 @@ public class ArrayStack<T> implements Stack<T> {
         // homework
         //T val = null;   // place holder
         //return data.val;   // place holder
-        return data[size];
+        return data[size-1];
     }
 
     @Override
     public int size() {
+
         return size;
     }
 }

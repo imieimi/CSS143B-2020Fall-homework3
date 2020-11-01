@@ -13,7 +13,6 @@ public class Problem3{
         // !!! must use your ArrayStack or LinkedListStack in problem 1
         // print with the following format. System.out.println() will not pass test.
         //print.println("hello world");   // place holder
-        Stack data = new LinkedListStack();
-        while(data.)
+
     }
 }
