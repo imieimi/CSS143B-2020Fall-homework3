@@ -47,4 +47,13 @@ public class ArrayStack<T> implements Stack<T> {
 
         return size;
     }
+    public boolean isEmpty(){
+        boolean empty = false;
+        if(data == null){
+            empty =  true;
+        }else if(data != null){
+            empty = false;
+        }
+        return empty;
+    }
 }

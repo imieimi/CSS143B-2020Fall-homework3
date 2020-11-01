@@ -1,7 +1,5 @@
 package Problem1;
 
-import java.lang.reflect.Array;
-
 public class ValidParentheses {
 
     // Do not change signature (function name, parameters, return type)
@@ -9,42 +7,26 @@ public class ValidParentheses {
         // homework
         // !!! must use ArrayStack or LinkedListStack from problem 1
         //return false; // place holder
-        ArrayStack s = new ArrayStack(str.length()-1);
+        ArrayStack s = new ArrayStack(str.length());
         char[] c = str.toCharArray();
-        boolean answer = false;
-        for(int i = 0; i < c.length - 1; i++) {
+        for (int i = 0; i < c.length; i++) {
             char current = c[i];
-            if (current == '(' || current == '{' || current == '[') {
+            if (current == '[' || current == '(' || current == '{') {
                 s.push(current);
-            }
-            if (s != null) {
-                char check = (char) s.pop();
-                switch (current) {
-                    case ')':
-                        if (check == '{' || check == '[') {
-                        } else if (check == ')') {
-                            s.push(current);
-                            return false;
-                        }
-                        break;
-                    case '}':
-                        if (check == '(' || check == '[') {
-                        } else if (check == '}') {
-                            s.push(current);
-                            return false;
-                        }
-                        break;
-                    case ']':
-                        if (check == '{' || check == '(') {
-
-                        } else if (check == ']') {
-                            s.push(current);
-                            return false;
-                        }
-                        break;
+            } else if (current == ']') {
+                if (s.isEmpty() || (char) s.pop() != '[') {
+                    return false;
+                } else if (current == '}') {
+                    if (s.isEmpty() || (char) s.pop() != '{') {
+                        return false;
+                    }
+                } else if (current == ']') {
+                    if (s.isEmpty() || (char) s.pop() != '[') {
+                        return false;
+                    }
                 }
             }
         }
-        return false;
+        return s.isEmpty();
     }
 }
